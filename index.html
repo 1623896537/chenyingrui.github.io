@@ -2,276 +2,1120 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>栾聪的个人主页</title>
+    <title>栾聪 | 个人技术空间</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        #ap{color: #e74c3c}
-        #bp{color: #c0392b}
-        h1{
-            color: #4a90e2;
-            font-size: 1.8rem;
-            border-bottom: 2px solid #4a90e2;
-            padding-bottom: 8px;
-            margin: 20px auto;
-            width: fit-content;
+        /* 全局样式 - 修改为中国红色风格（核心调整区域） */
+        :root {
+            /* 中国红主色调系列（保证协调统一，兼顾美观与可读性） */
+            --primary: #C62828; /* 正红（主色调） */
+            --primary-dark: #B71C1C; /* 深红（hover/深色阴影） */
+            --secondary: #E53935; /* 朱红（辅助色调） */
+            --secondary-dark: #D32F2F; /* 暗朱红（辅助深色） */
+            --accent: #F44336; /* 亮红（强调色，标签/小元素） */
+            --accent-dark: #E91E63; /* 暗红（强调色深色版） */
+            /* 保留原有中性色，保证文字可读性与页面层次感 */
+            --light: #fdfbfb; /* 浅米白（背景，贴合中国红） */
+            --dark: #343a40;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --shadow: rgba(198, 40, 40, 0.1); /* 红色系阴影，更贴合风格 */
+            /* 红色系渐变（替换原有蓝紫渐变，保持渐变层次） */
+            --gradient-primary: linear-gradient(135deg, #C62828 0%, #B71C1C 100%);
+            --gradient-secondary: linear-gradient(135deg, #E53935 0%, #C62828 100%);
+            --gradient-accent: linear-gradient(135deg, #F44336 0%, #C62828 100%);
         }
-        .a{
-            color: #e74c3c;
-            background-color: #fef0f0;
+
+        * {
             margin: 0;
-        }
-        .b{
-            color: #27ae60;
-            background-color: rgb(240, 255, 240);
-            margin: 0;
-        }
-        .c{
-            color: #3498db;
-            background-color: rgba(240, 248, 255, 0.8);
-            margin: 0;
-        }
-        .timestamp {
-            color: #4a90e2;
-            font-size: 1rem;
-            margin: 10px auto 20px;
-            padding: 8px 16px;
-            background-color: #eef5ff;
-            border-radius: 4px;
-            display: inline-block;
-        }
-        body {
-            margin: 0 auto;
-            min-height: 100vh;
-            background-color: #f5f9ff;
-            max-width: 900px;
-            padding: 20px 40px;
-            font-family: "微软雅黑", Arial, sans-serif;
-            line-height: 1.8;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        img {
-            border-radius: 50%;
-            border: 3px solid #4a90e2;
-            display: block;
-            margin: 20px auto;
-            width: 180px;
-            height: 180px;
-            object-fit: cover;
-        }
-        hr {
-            border: none;
-            height: 2px;
-            background: linear-gradient(to right, #4a90e2, #2ecc71, #f39c12);
-            margin: 25px auto;
-            max-width: 80%;
-        }
-        a {
-            color: #4a90e2;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        a:hover {
-            color: #3366cc;
-            text-decoration: underline;
-        }
-        table {
-            width: 80%;
-            border-collapse: collapse;
-            margin: 20px auto;
-        }
-        tr:hover {
-            background-color: #eef5ff;
-        }
-        th, td {
-            padding: 12px;
-            text-align: center;
-            border: 1px solid #ddd;
-        }
-        th {
-            background-color: #e6f0ff;
-        }
-        form {
-            background-color: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            width: 70%;
-            margin: 20px auto;
-            text-align: left;
-        }
-        input[type="text"], input[type="tel"], textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            padding: 0;
             box-sizing: border-box;
         }
-        textarea {
-            resize: vertical;
+
+        html {
+            scroll-behavior: smooth;
         }
-        button {
-            background-color: #4a90e2;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            display: block;
+
+        body {
+            font-family: 'Microsoft YaHei', 'Hiragino Kaku Gothic ProN', Arial, sans-serif;
+            background: linear-gradient(135deg, #fdfbfb 0%, #f8eaea 100%); /* 微调背景，更贴合中国红 */
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* 简化装饰元素 - 红色系弱化视觉存在感 */
+        .page-decoration {
+            position: fixed;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .decoration-1 {
+            top: 10%;
+            left: 5%;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(15px);
+            animation: float 12s ease-in-out infinite;
+        }
+
+        .decoration-2 {
+            bottom: 15%;
+            right: 8%;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, var(--secondary) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(20px);
+            animation: float 15s ease-in-out infinite reverse;
+        }
+
+        .decoration-3 {
+            top: 50%;
+            left: 85%;
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(10px);
+            animation: float 10s ease-in-out infinite;
+        }
+
+        /* 主容器 */
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 20px;
         }
-        button:hover {
-            background-color: #3366cc;
+
+        /* 导航栏 - 中国红风格简约化 */
+        .main-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 0 0 12px 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 15px var(--shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--primary); /* 红色底部边框 */
+            padding: 12px 24px;
         }
-        ul, ol {
-            padding-left: 0;
-            margin: 10px auto 20px;
-            list-style-position: inside;
-            max-width: fit-content;
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: 600;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: flex;
+            align-items: center;
         }
-        li {
-            margin: 8px 0;
+
+        .nav-brand i {
+            margin-right: 8px;
+            font-size: 1.8rem;
         }
-        p, strong {
-            margin: 10px auto;
-            max-width: 90%;
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
         }
-        .hobby-item {
-            display: inline-block;
-            margin: 5px 10px;
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
             padding: 6px 12px;
-            background-color: #e6f0ff;
-            border-radius: 20px;
-            color: #4a90e2;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
-        .experience-card {
-            background-color: white;
-            padding: 15px;
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary); /* 红色渐变hover背景 */
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+
+        .nav-link:hover {
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .nav-link:hover::before {
+            left: 0;
+        }
+
+        /* 头部区域 - 中国红风格简化 */
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 15px;
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 8px 20px var(--shadow);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--primary); /* 红色边框 */
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: var(--gradient-primary); /* 红色顶部渐变条 */
+        }
+
+        .header-title {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 2px 2px 0 rgba(198, 40, 40, 0.03); /* 红色系轻微文字阴影 */
+        }
+
+        .header-subtitle {
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        /* 个人信息卡片 - 中国红风格简约化 */
+        .profile-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .profile-avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 6px solid transparent;
+            background: var(--gradient-primary) border-box; /* 红色渐变边框 */
+            box-shadow: 0 8px 15px rgba(198, 40, 40, 0.1); /* 红色系阴影 */
+            object-fit: cover;
+            transition: all 0.5s ease;
+            animation: float 8s ease-in-out infinite;
+            cursor: pointer;
+        }
+
+        .profile-avatar:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 20px rgba(198, 40, 40, 0.15); /* hover红色阴影加深 */
+        }
+
+        .profile-name {
+            margin-top: 15px;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+        }
+
+        .profile-name::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-primary); /* 红色渐变下划线 */
+            border-radius: 2px;
+        }
+
+        /* 通用卡片样式 - 中国红风格简化 */
+        .content-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 15px var(--shadow);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.15);
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: var(--gradient-primary); /* 红色左侧竖条 */
+        }
+
+        .content-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 20px var(--shadow);
+            border-color: var(--primary); /* hover红色边框 */
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gradient-primary); /* 红色渐变图标背景 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 16px;
+            font-size: 1.5rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .card-title {
+            font-size: 1.6rem;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        .card-subtitle {
+            color: var(--primary); /* 红色副标题 */
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        /* 技能进度条 - 中国红风格简约化 */
+        .skill-item {
+            margin-bottom: 16px;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+        }
+
+        .skill-name {
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .skill-percent {
+            color: var(--primary); /* 红色进度百分比 */
+            font-weight: 500;
+        }
+
+        .skill-bar {
+            height: 10px;
+            background: #f1e0e0; /* 浅红背景，贴合中国红 */
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            border-radius: 5px;
+            background: var(--gradient-primary); /* 红色渐变进度条 */
+            width: 0;
+            transition: width 1.5s ease;
+        }
+
+        /* 时间线 - 中国红风格简化 */
+        .timeline {
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--gradient-primary); /* 红色时间线 */
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 24px;
+            padding: 16px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px var(--shadow);
+            border-left: 3px solid var(--primary); /* 红色左侧边框 */
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 20px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary); /* 红色时间点 */
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px var(--primary); /* 红色时间点阴影 */
+        }
+
+        .timeline-date {
+            color: var(--primary); /* 红色日期 */
+            font-weight: 500;
+            margin-bottom: 4px;
+            font-size: 0.95rem;
+        }
+
+        /* 项目展示 - 中国红风格简约化 */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 16px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 12px var(--shadow);
+            transition: all 0.4s ease;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 10px 18px var(--shadow);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-img {
+            transform: scale(1.03);
+        }
+
+        .project-content {
+            padding: 16px;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 12px;
+        }
+
+        .project-tag {
+            background: var(--gradient-accent); /* 红色渐变标签 */
+            color: white;
+            padding: 3px 10px;
+            border-radius: 16px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* 画廊 - 中国红风格简约化 */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 180px;
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 5px 10px var(--shadow);
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 8px 15px var(--shadow);
+            z-index: 10;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.05);
+        }
+
+        /* 联系表单 - 中国红风格简约化 */
+        .contact-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px;
             border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            margin: 10px auto;
-            max-width: 80%;
-            text-align: left;
+            border: 1px solid #f1e0e0; /* 浅红边框 */
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary); /* 红色聚焦边框 */
+            box-shadow: 0 0 0 2px rgba(198, 40, 40, 0.2); /* 红色聚焦阴影 */
+        }
+
+        .submit-btn {
+            grid-column: 1 / -1;
+            justify-self: center;
+            padding: 12px 40px;
+            background: var(--gradient-primary); /* 红色渐变按钮 */
+            color: white;
+            border: none;
+            border-radius: 24px;
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 12px rgba(198, 40, 40, 0.2); /* 红色按钮阴影 */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(198, 40, 40, 0.3); /* hover红色阴影加深 */
+        }
+
+        .submit-btn:active {
+            transform: translateY(-1px);
+        }
+
+        /* 页脚 - 中国红风格简约化 */
+        .page-footer {
+            background: var(--dark);
+            color: white;
+            padding: 30px 15px;
+            border-radius: 12px 12px 0 0;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin: 16px 0;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gradient-primary); /* 红色渐变社交图标 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px) rotate(5deg);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            background: var(--gradient-secondary); /* hover红色渐变切换 */
+        }
+
+        /* 动画定义 - 保留原有动画，颜色已适配中国红 */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(198, 40, 40, 0.5); /* 红色脉冲阴影 */
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(198, 40, 40, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(198, 40, 40, 0);
+            }
+        }
+
+        /* 响应式设计 - 保留原有适配，风格已适配中国红 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .main-nav {
+                flex-direction: column;
+                padding: 12px;
+            }
+
+            .nav-links {
+                margin-top: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .header-title {
+                font-size: 2rem;
+            }
+
+            .contact-form {
+                grid-template-columns: 1fr;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+
+        /* 滚动条样式 - 中国红风格简约化 */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f8eaea; /* 浅红滚动条轨道 */
+            border-radius: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gradient-primary); /* 红色渐变滚动条 */
+            border-radius: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark); /* 深红滚动条hover */
+        }
+
+        /* 工具类 - 保留原有，无修改 */
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-30 {
+            margin-top: 30px;
+        }
+
+        .mb-30 {
+            margin-bottom: 30px;
+        }
+
+        .pulse-animation {
+            animation: pulse 3s infinite;
         }
     </style>
 </head>
+
 <body>
-<div class="timestamp" id="currentTime"></div>
+<!-- 简约装饰元素 -->
+<div class="page-decoration decoration-1"></div>
+<div class="page-decoration decoration-2"></div>
+<div class="page-decoration decoration-3"></div>
 
-<h1>欢迎来到栾聪的个人主页</h1>
-<hr>
-<strong>关于我</strong><br>
-<img src="图片.jpg" alt="个人头像">
-<p>大家好！我叫<strong>栾聪</strong>，今年20岁，是一名计算机专业的大学生，目前就读于某高校计算机科学与技术专业，处于大二学业阶段。<br>我对前端开发、后端编程有着浓厚的兴趣，尤其热衷于探索Web技术的无限可能。我喜欢编程、阅读和打篮球，编程让我能够用代码实现创意，阅读让我拓宽认知边界，篮球让我体会团队协作的乐趣。<br>我的座右铭是：<strong><em>"学无止境，每天进步一点点。"</em></strong></p>
+<!-- 导航栏 -->
+<nav class="main-nav">
+    <div class="nav-brand">
+        <i class="fas fa-code"></i>
+        栾聪的个人空间
+    </div>
+    <div class="nav-links">
+        <a href="#home" class="nav-link">主页</a>
+        <a href="#about" class="nav-link">关于我</a>
+        <a href="#skills" class="nav-link">能力</a>
+        <a href="#projects" class="nav-link">作品</a>
+        <a href="#gallery" class="nav-link">作品集</a>
+        <a href="#contact" class="nav-link">联系</a>
+    </div>
+</nav>
 
-<h1>我的技能</h1>
-<ul>
-    <li>HTML 网页制作（能够搭建结构完整、语义清晰的静态页面）</li>
-    <li>CSS 样式美化（熟练掌握盒子模型、浮动、弹性布局，能实现响应式基础效果）</li>
-    <li>Python 编程（掌握基础语法、面向对象编程，能开发简单的脚本工具和小型项目）</li>
-    <li>Office 办公软件（精通Word文档排版、Excel数据处理、PPT演示文稿制作）</li>
-    <li>摄影与修图（熟练使用单反相机拍摄，掌握Lightroom、Photoshop后期修图技巧）</li>
-</ul>
+<div class="container">
+    <!-- 主页区域 -->
+    <section id="home" class="page-header">
+        <h1 class="header-title">欢迎来到我的个人技术空间</h1>
+        <p class="header-subtitle">探索技术与设计的边界 • 持续学习与成长</p>
 
-<h1>我的学习计划</h1>
-<ol>
-    <li>夯实 HTML/CSS 基础，深入学习CSS3新特性与高级布局技巧</li>
-    <li>学习 JavaScript 核心语法，掌握DOM操作、事件处理与异步编程</li>
-    <li>接触前端框架（Vue或React），搭建完整的前端项目并实现交互功能</li>
-    <li>深化 Python 后端知识，学习Django/Flask框架，实现前后端数据交互</li>
-    <li>完成一个完整的全栈网站项目（如个人博客、校园信息查询平台）</li>
-    <li>学习数据库相关知识（MySQL），掌握数据的增删改查与优化技巧</li>
-</ol>
+        <div class="profile-card">
+            <!-- 个人头像：180x180 真人风格网络图片 -->
+            <img src="https://picsum.photos/180/180?random=1" alt="栾聪个人头像" class="profile-avatar" id="characterAvatar">
+            <h2 class="profile-name">栾聪</h2>
+            <p class="text-center mt-30">计算机科学与技术专业 • Web开发 • Python编程 • 全栈开发学习者</p>
+        </div>
+    </section>
 
-<h1>我的个人经历</h1>
-<div class="experience-card">
-    <strong>2024年9月 - 至今</strong>：就读于某高校计算机科学与技术专业，主修课程包括高等数学、C语言程序设计、计算机组成原理等。
+    <!-- 关于我 -->
+    <section id="about" class="content-card">
+        <div class="card-header">
+            <div class="card-icon">
+                <i class="fas fa-user"></i>
+            </div>
+            <div>
+                <h2 class="card-title">关于我</h2>
+                <p class="card-subtitle">技术学习与成长之路</p>
+            </div>
+        </div>
+
+        <div class="about-content">
+            <p>你好！我是栾聪，一名计算机科学与技术专业的本科生，专注于Web开发领域的学习与实践。</p>
+            <p>我的学习之旅始于2024年，从HTML/CSS基础到Python后端开发，逐步构建完整的技术知识体系。</p>
+            <p>我注重技术与用户体验的结合，追求写出高效、优雅且易维护的代码，同时关注前端视觉设计与交互体验的优化。</p>
+            <p>目前我正在深入学习全栈开发技术，目标是成为一名能够独立完成从前端到后端全流程开发的工程师。</p>
+        </div>
+
+        <div class="timeline mt-30">
+            <div class="timeline-item">
+                <div class="timeline-date">2024.09 - 至今</div>
+                <h3>计算机科学专业学习</h3>
+                <p>进入高校计算机科学与技术专业，系统学习计算机基础、数据结构、编程语言等核心课程。</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2025.03 - 2025.06</div>
+                <h3>Web前端开发入门</h3>
+                <p>参与校内Web开发实践，完成首个个人静态网页项目，掌握HTML/CSS/JavaScript核心技能。</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2025.07 - 2025.08</div>
+                <h3>Python后端学习</h3>
+                <p>学习Python编程及后端开发技术，完成多个自动化脚本与小型后端项目，掌握数据库基础。</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2025.09 - 至今</div>
+                <h3>全栈开发探索</h3>
+                <p>整合前端与后端技术，探索前后端交互方案，追求技术与设计的融合优化。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 能力 -->
+    <section id="skills" class="content-card">
+        <div class="card-header">
+            <div class="card-icon">
+                <i class="fas fa-code"></i>
+            </div>
+            <div>
+                <h2 class="card-title">我的能力</h2>
+                <p class="card-subtitle">技术栈与熟练度</p>
+            </div>
+        </div>
+
+        <div class="skills-container">
+            <div class="skill-item">
+                <div class="skill-info">
+                    <span class="skill-name">HTML5 / CSS3</span>
+                    <span class="skill-percent">85%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-percent="85"></div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-info">
+                    <span class="skill-name">JavaScript</span>
+                    <span class="skill-percent">70%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-percent="70"></div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-info">
+                    <span class="skill-name">Python</span>
+                    <span class="skill-percent">75%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-percent="75"></div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-info">
+                    <span class="skill-name">UI/UX设计</span>
+                    <span class="skill-percent">65%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-percent="65"></div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-info">
+                    <span class="skill-name">Git版本控制</span>
+                    <span class="skill-percent">80%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-percent="80"></div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-info">
+                    <span class="skill-name">交互设计</span>
+                    <span class="skill-percent">70%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-percent="70"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品 -->
+    <section id="projects" class="content-card">
+        <div class="card-header">
+            <div class="card-icon">
+                <i class="fas fa-laptop-code"></i>
+            </div>
+            <div>
+                <h2 class="card-title">我的作品</h2>
+                <p class="card-subtitle">技术与设计的实践成果</p>
+            </div>
+        </div>
+
+        <div class="project-grid">
+            <div class="project-card">
+                <!-- 项目图片1：适配160px高度 技术开发风格 -->
+                <img src="https://picsum.photos/600/320?random=2" alt="个人技术主页V1.0项目截图" class="project-img">
+                <div class="project-content">
+                    <h3 class="project-title">个人技术主页V1.0</h3>
+                    <p>基于HTML/CSS/JavaScript开发的个人主页，实现响应式布局与交互动画效果。</p>
+                    <div class="project-tags">
+                        <span class="project-tag">HTML/CSS</span>
+                        <span class="project-tag">JavaScript</span>
+                        <span class="project-tag">响应式设计</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <!-- 项目图片2：适配160px高度 数据管理风格 -->
+                <img src="https://picsum.photos/600/320?random=3" alt="数据管理系统项目截图" class="project-img">
+                <div class="project-content">
+                    <h3 class="project-title">数据管理系统</h3>
+                    <p>使用Python和SQLite构建的信息管理系统，包含数据增删改查与分类检索功能。</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">SQLite</span>
+                        <span class="project-tag">Tkinter GUI</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <!-- 项目图片3：适配160px高度 CSS动画风格 -->
+                <img src="https://picsum.photos/600/320?random=4" alt="CSS交互效果实验室项目截图" class="project-img">
+                <div class="project-content">
+                    <h3 class="project-title">CSS交互效果实验室</h3>
+                    <p>展示30+种CSS动画与过渡效果的交互式项目，探索前端视觉交互的实现方式。</p>
+                    <div class="project-tags">
+                        <span class="project-tag">CSS3</span>
+                        <span class="project-tag">动画</span>
+                        <span class="project-tag">交互设计</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品集 -->
+    <section id="gallery" class="content-card">
+        <div class="card-header">
+            <div class="card-icon">
+                <i class="fas fa-images"></i>
+            </div>
+            <div>
+                <h2 class="card-title">作品集</h2>
+                <p class="card-subtitle">项目设计与视觉展示</p>
+            </div>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://picsum.photos/400/360?random=5" alt="作品1 - 前端界面设计" class="gallery-img">
+            </div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/400/360?random=6" alt="作品2 - 数据可视化图表" class="gallery-img">
+            </div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/400/360?random=7" alt="作品3 - 移动端适配效果" class="gallery-img">
+            </div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/400/360?random=8" alt="作品4 - 后端项目架构图" class="gallery-img">
+            </div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/400/360?random=9" alt="作品5 - CSS动画效果展示" class="gallery-img">
+            </div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/400/360?random=10" alt="作品6 - 全栈项目演示截图" class="gallery-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我 -->
+    <section id="contact" class="content-card">
+        <div class="card-header">
+            <div class="card-icon">
+                <i class="fas fa-comment-dots"></i>
+            </div>
+            <div>
+                <h2 class="card-title">联系我</h2>
+                <p class="card-subtitle">交流技术与合作机会</p>
+            </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <label for="name" class="form-label">你的名字</label>
+                <input type="text" id="name" class="form-input" placeholder="请输入你的名字" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="form-label">邮箱地址</label>
+                <input type="email" id="email" class="form-input" placeholder="example@email.com" required>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="subject" class="form-label">主题</label>
+                <input type="text" id="subject" class="form-input" placeholder="留言主题" required>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="message" class="form-label">留言内容</label>
+                <textarea id="message" class="form-input" rows="5" placeholder="你想对我说什么？" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn pulse-animation">
+                <i class="fas fa-paper-plane"></i> 发送消息
+            </button>
+        </form>
+
+        <div class="contact-info mt-30">
+            <div class="card-header">
+                <div class="card-icon">
+                    <i class="fas fa-id-card"></i>
+                </div>
+                <div>
+                    <h2 class="card-title">我的联系方式</h2>
+                </div>
+            </div>
+
+            <div class="contact-details">
+                <p><i class="fas fa-envelope"></i> <strong>邮箱:</strong> 2249433028@qq.com</p>
+                <p><i class="fas fa-phone"></i> <strong>电话:</strong> 13666666666</p>
+                <p><i class="fas fa-map-marker-alt"></i> <strong>地址:</strong> 重庆市武隆区</p>
+                <p><i class="fas fa-github"></i> <strong>GitHub:</strong> https://github.com/1623896537/chenyingrui.github.io</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="page-footer">
+        <h3>感谢访问我的个人技术空间！</h3>
+        <p>以代码构建价值，以设计提升体验，持续探索技术的无限可能</p>
+
+        <div class="social-links">
+            <a href="https://github.com/1623896537/chenyingrui.github.io" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-qq"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-bilibili"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+        </div>
+
+        <p class="mt-30">© 2025 栾聪的个人空间 | 技术与设计的融合</p>
+    </footer>
 </div>
-<div class="experience-card">
-    <strong>2025年3月 - 2025年6月</strong>：参加校内前端开发兴趣小组，完成小组合作项目《校园风景展示网页》，负责页面结构搭建与样式美化。
-</div>
-<div class="experience-card">
-    <strong>2025年7月 - 2025年8月</strong>：参与暑期编程实训营，系统学习Python自动化脚本开发，完成《个人文件整理工具》小程序。
-</div>
-
-<h1>我的爱好</h1>
-<div>
-    <span class="hobby-item">编程开发</span>
-    <span class="hobby-item">经典书籍阅读</span>
-    <span class="hobby-item">篮球竞技</span>
-    <span class="hobby-item">风光摄影</span>
-    <span class="hobby-item">后期修图</span>
-    <span class="hobby-item">轻音乐欣赏</span>
-    <span class="hobby-item">技术博客撰写</span>
-</div>
-
-<h1>我喜欢的网站</h1>
-<ul>
-    <li><a href="https://www.baidu.com">百度 - 搜索引擎</a></li>
-    <li><a href="https://www.bilibili.com">bilibili - 学习视频与优质内容平台</a></li>
-    <li><a href="https://github.com">GitHub - 代码托管与开源项目社区</a></li>
-    <li><a href="https://developer.mozilla.org/zh-CN/">MDN Web 文档 - 前端开发权威指南</a></li>
-    <li><a href="https://leetcode.cn">力扣 - 编程算法刷题平台</a></li>
-    <li><a href="https://www.csdn.net">CSDN - 中国IT技术社区</a></li>
-</ul>
-
-<h1>联系我</h1>
-<table>
-    <tr>
-        <th><strong>联系方式</strong></th>
-        <th><strong>内容</strong></th>
-    </tr>
-    <tr>
-        <td><p class="a">邮箱</p></td>
-        <td><p class="a">2249433028@qq.com</p></td>
-    </tr>
-    <tr>
-        <td><p class="b">电话</p></td>
-        <td><p class="b">13666666666</p></td>
-    </tr>
-    <tr>
-        <td><p class="c">地址</p></td>
-        <td><p class="c">中国重庆市武隆</p></td>
-    </tr>
-</table>
-
-<h1>给我留言</h1>
-<form>
-    <p id="ap">
-        <label>你的名字：</label><br>
-        <input type="text" name="name" placeholder="请输入你的姓名">
-    </p>
-    <p id="ap">
-        <label>你的电话（选填）：</label><br>
-        <input type="tel" name="phone" placeholder="请输入你的联系电话">
-    </p>
-    <p id="bp">
-        <label>留言内容：</label><br>
-        <textarea name="message" rows="4" placeholder="请输入你的留言，可交流技术、学习心得等"></textarea>
-    </p>
-    <p><button type="submit">提交</button></p>
-</form>
 
 <script>
-    function formatDateTime() {
-        const now = new Date();
-        const year = now.getFullYear();
-        const month = String(now.getMonth() + 1).padStart(2, '0');
-        const day = String(now.getDate()).padStart(2, '0');
-        const hours = String(now.getHours()).padStart(2, '0');
-        const minutes = String(now.getMinutes()).padStart(2, '0');
-        const seconds = String(now.getSeconds()).padStart(2, '0');
-        const weekList = ['日', '一', '二', '三', '四', '五', '六'];
-        const week = weekList[now.getDay()];
-        return `当前时间：${year}年${month}月${day}日 星期${week} ${hours}:${minutes}:${seconds}`;
+    // 页面加载完成后执行
+    document.addEventListener('DOMContentLoaded', function() {
+        // 初始化技能进度条动画
+        initSkillBars();
+
+        // 初始化表单提交
+        initContactForm();
+
+        // 初始化画廊点击效果
+        initGallery();
+
+        // 初始化头像点击效果
+        initAvatarEffect();
+
+        // 初始化导航栏滚动效果
+        initNavScroll();
+    });
+
+    // 初始化技能进度条
+    function initSkillBars() {
+        const skillProgresses = document.querySelectorAll('.skill-progress');
+
+        // 使用Intersection Observer API来检测元素是否进入视口
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBar = entry.target;
+                    const percent = progressBar.getAttribute('data-percent');
+
+                    // 延迟一点时间开始动画，以创建交错效果
+                    setTimeout(() => {
+                        progressBar.style.width = `${percent}%`;
+                    }, Math.random() * 500);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        skillProgresses.forEach(progress => {
+            observer.observe(progress);
+        });
     }
-    function updateTimestamp() {
-        const timeElement = document.getElementById('currentTime');
-        timeElement.innerText = formatDateTime();
+
+    // 初始化表单提交
+    function initContactForm() {
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('留言提交成功！我会尽快回复你。');
+            form.reset();
+        });
     }
-    updateTimestamp();
-    setInterval(updateTimestamp, 1000);
+
+    // 初始化画廊点击效果
+    function initGallery() {
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        galleryItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const imgSrc = this.querySelector('.gallery-img').src;
+                // 简单的图片预览逻辑
+                const preview = document.createElement('div');
+                preview.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0,0,0,0.8);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 9999;
+                    cursor: pointer;
+                `;
+                const img = document.createElement('img');
+                img.src = imgSrc;
+                img.style.maxWidth = '90%';
+                img.style.maxHeight = '90%';
+                preview.appendChild(img);
+                document.body.appendChild(preview);
+                preview.addEventListener('click', function() {
+                    document.body.removeChild(preview);
+                });
+            });
+        });
+    }
+
+    // 初始化头像点击效果
+    function initAvatarEffect() {
+        const avatar = document.getElementById('characterAvatar');
+        avatar.addEventListener('click', function() {
+            this.style.transform = 'scale(1.1) rotate(5deg)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1.05) rotate(0deg)';
+            }, 300);
+        });
+    }
+
+    // 初始化导航栏滚动效果
+    function initNavScroll() {
+        const nav = document.querySelector('.main-nav');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 5px 20px rgba(198, 40, 40, 0.1)';
+                nav.style.background = 'rgba(255,255,255,0.95)';
+            } else {
+                nav.style.boxShadow = '0 3px 15px var(--shadow)';
+                nav.style.background = 'rgba(255,255,255,0.9)';
+            }
+        });
+    }
 </script>
 </body>
 </html>
