@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>栾聪的个人主页</title>
+    <style>
+        #ap{color: #e74c3c}
+        #bp{color: #c0392b}
+        h1{
+            color: #4a90e2;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 8px;
+            margin: 20px auto;
+            width: fit-content;
+        }
+        .a{
+            color: #e74c3c;
+            background-color: #fef0f0;
+            margin: 0;
+        }
+        .b{
+            color: #27ae60;
+            background-color: rgb(240, 255, 240);
+            margin: 0;
+        }
+        .c{
+            color: #3498db;
+            background-color: rgba(240, 248, 255, 0.8);
+            margin: 0;
+        }
+        .timestamp {
+            color: #4a90e2;
+            font-size: 1rem;
+            margin: 10px auto 20px;
+            padding: 8px 16px;
+            background-color: #eef5ff;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        body {
+            margin: 0 auto;
+            min-height: 100vh;
+            background-color: #f5f9ff;
+            max-width: 900px;
+            padding: 20px 40px;
+            font-family: "微软雅黑", Arial, sans-serif;
+            line-height: 1.8;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        img {
+            border-radius: 50%;
+            border: 3px solid #4a90e2;
+            display: block;
+            margin: 20px auto;
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, #4a90e2, #2ecc71, #f39c12);
+            margin: 25px auto;
+            max-width: 80%;
+        }
+        a {
+            color: #4a90e2;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #3366cc;
+            text-decoration: underline;
+        }
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        tr:hover {
+            background-color: #eef5ff;
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #e6f0ff;
+        }
+        form {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 70%;
+            margin: 20px auto;
+            text-align: left;
+        }
+        input[type="text"], input[type="tel"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+        }
+        button {
+            background-color: #4a90e2;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 0 auto;
+        }
+        button:hover {
+            background-color: #3366cc;
+        }
+        ul, ol {
+            padding-left: 0;
+            margin: 10px auto 20px;
+            list-style-position: inside;
+            max-width: fit-content;
+        }
+        li {
+            margin: 8px 0;
+        }
+        p, strong {
+            margin: 10px auto;
+            max-width: 90%;
+        }
+        .hobby-item {
+            display: inline-block;
+            margin: 5px 10px;
+            padding: 6px 12px;
+            background-color: #e6f0ff;
+            border-radius: 20px;
+            color: #4a90e2;
+        }
+        .experience-card {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin: 10px auto;
+            max-width: 80%;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<div class="timestamp" id="currentTime"></div>
+
+<h1>欢迎来到栾聪的个人主页</h1>
+<hr>
+<strong>关于我</strong><br>
+<img src="图片.jpg" alt="个人头像">
+<p>大家好！我叫<strong>栾聪</strong>，今年20岁，是一名计算机专业的大学生，目前就读于某高校计算机科学与技术专业，处于大二学业阶段。<br>我对前端开发、后端编程有着浓厚的兴趣，尤其热衷于探索Web技术的无限可能。我喜欢编程、阅读和打篮球，编程让我能够用代码实现创意，阅读让我拓宽认知边界，篮球让我体会团队协作的乐趣。<br>我的座右铭是：<strong><em>"学无止境，每天进步一点点。"</em></strong></p>
+
+<h1>我的技能</h1>
+<ul>
+    <li>HTML 网页制作（能够搭建结构完整、语义清晰的静态页面）</li>
+    <li>CSS 样式美化（熟练掌握盒子模型、浮动、弹性布局，能实现响应式基础效果）</li>
+    <li>Python 编程（掌握基础语法、面向对象编程，能开发简单的脚本工具和小型项目）</li>
+    <li>Office 办公软件（精通Word文档排版、Excel数据处理、PPT演示文稿制作）</li>
+    <li>摄影与修图（熟练使用单反相机拍摄，掌握Lightroom、Photoshop后期修图技巧）</li>
+</ul>
+
+<h1>我的学习计划</h1>
+<ol>
+    <li>夯实 HTML/CSS 基础，深入学习CSS3新特性与高级布局技巧</li>
+    <li>学习 JavaScript 核心语法，掌握DOM操作、事件处理与异步编程</li>
+    <li>接触前端框架（Vue或React），搭建完整的前端项目并实现交互功能</li>
+    <li>深化 Python 后端知识，学习Django/Flask框架，实现前后端数据交互</li>
+    <li>完成一个完整的全栈网站项目（如个人博客、校园信息查询平台）</li>
+    <li>学习数据库相关知识（MySQL），掌握数据的增删改查与优化技巧</li>
+</ol>
+
+<h1>我的个人经历</h1>
+<div class="experience-card">
+    <strong>2024年9月 - 至今</strong>：就读于某高校计算机科学与技术专业，主修课程包括高等数学、C语言程序设计、计算机组成原理等。
+</div>
+<div class="experience-card">
+    <strong>2025年3月 - 2025年6月</strong>：参加校内前端开发兴趣小组，完成小组合作项目《校园风景展示网页》，负责页面结构搭建与样式美化。
+</div>
+<div class="experience-card">
+    <strong>2025年7月 - 2025年8月</strong>：参与暑期编程实训营，系统学习Python自动化脚本开发，完成《个人文件整理工具》小程序。
+</div>
+
+<h1>我的爱好</h1>
+<div>
+    <span class="hobby-item">编程开发</span>
+    <span class="hobby-item">经典书籍阅读</span>
+    <span class="hobby-item">篮球竞技</span>
+    <span class="hobby-item">风光摄影</span>
+    <span class="hobby-item">后期修图</span>
+    <span class="hobby-item">轻音乐欣赏</span>
+    <span class="hobby-item">技术博客撰写</span>
+</div>
+
+<h1>我喜欢的网站</h1>
+<ul>
+    <li><a href="https://www.baidu.com">百度 - 搜索引擎</a></li>
+    <li><a href="https://www.bilibili.com">bilibili - 学习视频与优质内容平台</a></li>
+    <li><a href="https://github.com">GitHub - 代码托管与开源项目社区</a></li>
+    <li><a href="https://developer.mozilla.org/zh-CN/">MDN Web 文档 - 前端开发权威指南</a></li>
+    <li><a href="https://leetcode.cn">力扣 - 编程算法刷题平台</a></li>
+    <li><a href="https://www.csdn.net">CSDN - 中国IT技术社区</a></li>
+</ul>
+
+<h1>联系我</h1>
+<table>
+    <tr>
+        <th><strong>联系方式</strong></th>
+        <th><strong>内容</strong></th>
+    </tr>
+    <tr>
+        <td><p class="a">邮箱</p></td>
+        <td><p class="a">2249433028@qq.com</p></td>
+    </tr>
+    <tr>
+        <td><p class="b">电话</p></td>
+        <td><p class="b">13666666666</p></td>
+    </tr>
+    <tr>
+        <td><p class="c">地址</p></td>
+        <td><p class="c">中国重庆市武隆</p></td>
+    </tr>
+</table>
+
+<h1>给我留言</h1>
+<form>
+    <p id="ap">
+        <label>你的名字：</label><br>
+        <input type="text" name="name" placeholder="请输入你的姓名">
+    </p>
+    <p id="ap">
+        <label>你的电话（选填）：</label><br>
+        <input type="tel" name="phone" placeholder="请输入你的联系电话">
+    </p>
+    <p id="bp">
+        <label>留言内容：</label><br>
+        <textarea name="message" rows="4" placeholder="请输入你的留言，可交流技术、学习心得等"></textarea>
+    </p>
+    <p><button type="submit">提交</button></p>
+</form>
+
+<script>
+    function formatDateTime() {
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const day = String(now.getDate()).padStart(2, '0');
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        const weekList = ['日', '一', '二', '三', '四', '五', '六'];
+        const week = weekList[now.getDay()];
+        return `当前时间：${year}年${month}月${day}日 星期${week} ${hours}:${minutes}:${seconds}`;
+    }
+    function updateTimestamp() {
+        const timeElement = document.getElementById('currentTime');
+        timeElement.innerText = formatDateTime();
+    }
+    updateTimestamp();
+    setInterval(updateTimestamp, 1000);
+</script>
+</body>
+</html>
